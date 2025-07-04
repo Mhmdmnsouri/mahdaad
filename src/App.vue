@@ -1,7 +1,7 @@
 <template>
-  <h1>Mahdaad Tasks</h1>
+  <DefaultLayout />
 </template>
 
-<script setup></script>
-
-<style scoped></style>
+<script setup>
+import DefaultLayout from './layouts/Default.vue';
+</script>
