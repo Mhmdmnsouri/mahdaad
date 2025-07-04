@@ -2,7 +2,7 @@
     <div>
         <Header />
 
-        <main class="flex-1 overflow-auto p-4 bg-[#fff] h-[calc(100vh-114px)]">
+        <main class="flex-1 overflow-auto p-4 bg-[#fff] min-h-[calc(100vh-114px)]">
             <RouterView />
         </main>
 
