@@ -43,5 +43,32 @@ export const useCustomerStore = defineStore("customer", () => {
     });
   });
 
-  return { purchasedProductByCustomer };
+  const topCategoryByCustomer = computed(() => {
+    return customers.value.map((customer) => {
+      const categoryTotals = {};
+
+      purchases.value.forEach((purchase) => {
+        if (purchase.customerId === customer.id) {
+          const product = productStore.products.find(
+            (product) => product.id === purchase.productId
+          );
+
+          if (product) {
+            categoryTotals[product.category] =
+              (categoryTotals[product.category] || 0) + 1;
+          }
+        }
+      });
+
+      const sortedCategory = Object.entries(categoryTotals).sort(
+        (a, b) => b[1] - a[1]
+      );
+      const topCategory =
+        sortedCategory.length > 0 ? sortedCategory[0][0] : null;
+
+      return { customerId: customer.id, name: customer.name, topCategory };
+    });
+  });
+
+  return { purchasedProductByCustomer, topCategoryByCustomer };
 });
