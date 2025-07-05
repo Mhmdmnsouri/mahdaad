@@ -70,19 +70,16 @@ export const useCustomerStore = defineStore("customer", () => {
     });
   });
 
-  const recommendationProducts = (customerId) => {
+  const recommendationProducts = (customerId, filterByCity = false) => {
     const targetCustomer = customers.value.find(
       (customer) => customer.id === customerId
     );
-
-    console.log(targetCustomer);
 
     if (!targetCustomer) return [];
 
     const favoriteCategory = topCategoryByCustomer.value.find(
       (item) => item.customerId === customerId
     ).topCategory;
-    console.log(favoriteCategory);
 
     if (!favoriteCategory) return [];
 
@@ -90,13 +87,24 @@ export const useCustomerStore = defineStore("customer", () => {
       .filter((purchase) => purchase.customerId === customerId)
       .map((purchase) => purchase.productId);
 
-    console.log(purchasedProductIds);
-
     let otherCustomerPurchases = purchases.value.filter(
       (purchase) => purchase.customerId !== customerId
     );
 
-    console.log(otherCustomerPurchases);
+    if (filterByCity) {
+      const sameCityCustomerIds = new Set(
+        customers.value
+          .filter(
+            (customer) =>
+              customer.city === targetCustomer.city &&
+              customer.id !== customerId
+          )
+          .map((customer) => customer.id)
+      );
+      otherCustomerPurchases = otherCustomerPurchases.filter((purchase) =>
+        sameCityCustomerIds.has(purchase.customerId)
+      );
+    }
 
     const recommendedProducts = otherCustomerPurchases
       .map((purchase) =>
@@ -111,13 +119,9 @@ export const useCustomerStore = defineStore("customer", () => {
           !purchasedProductIds.includes(product.id)
       );
 
-    console.log(recommendedProducts);
-
     const uniqueRecommendations = Array.from(
       new Set(recommendedProducts.map((product) => product.id))
     ).map((id) => productStore.products.find((product) => product.id === id));
-
-    console.log(uniqueRecommendations);
 
     return { uniqueRecommendations };
   };
