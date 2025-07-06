@@ -1,29 +1,22 @@
-# mahdaad-tasks
+# Basic Layout Structure
 
-This template should help get you started developing with Vue 3 in Vite.
+This branch implements a simple and clean page layout using Tailwind CSS, featuring:
 
-## Recommended IDE Setup
+- A fixed header
+- A flexible, scrollable content area
+- A fixed footer
+- Slot for dynamic page content
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This layout is reusable and serves as a solid base for further page development.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🎥 Screen Recording
 
-## Project Setup
+[Watch the coding](https://drive.google.com/file/d/1_uWh3D0MYLC9CRVsu-zjb43wcjXARqSI/view?usp=sharing)
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## 📂 Branch
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+`feat/layout`
