@@ -1,29 +1,23 @@
-# mahdaad-tasks
+# User Analysis Feature
 
-This template should help get you started developing with Vue 3 in Vite.
+This branch implements customer analysis features, including:
 
-## Recommended IDE Setup
+- Purchased products per customer
+- Calculating each customer’s most frequent purchase category
+- Recommending products based on similar customers
+- Optional filtering of recommendations by the customer’s city
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+All data is reactive and designed to be easily extended in the future.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🎥 Screen Recordings
 
-## Project Setup
+- [Watch the coding (Part 1)](https://drive.google.com/file/d/1a0hwPd8mLay9NYolsVkizBrHM5A-fR2j/view?usp=sharing)  
+- [Watch the coding (Part 2)](https://drive.google.com/file/d/1a3qnFmjQiEvV-VN7JMJBcO6SFIUCMNAK/view?usp=sharing)
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## 📂 Branch
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+`feat/user-analysis`
