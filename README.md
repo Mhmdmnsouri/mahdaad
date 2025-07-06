@@ -1,29 +1,22 @@
-# mahdaad-tasks
+# User Data Fetch with Cache and Cancellation
 
-This template should help get you started developing with Vue 3 in Vite.
+This branch implements user data retrieval with advanced handling, including:
 
-## Recommended IDE Setup
+- API calls triggered by `userId`
+- Cancelling previous requests if `userId` changes before completion
+- Caching responses per `userId` to avoid redundant network requests
+- Always updating the state with the latest response only
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+This ensures optimal performance and a responsive UX when switching between users.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🎥 Screen Recording
 
-## Project Setup
+[Watch the coding](https://drive.google.com/file/d/1_r2MWngSbG6oeWAeTWtaBD_JD0muD4PZ/view?usp=sharing)
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## 📂 Branch
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+`feat/user-data-cache-cancel`
