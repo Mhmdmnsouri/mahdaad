@@ -1,29 +1,23 @@
-# mahdaad-tasks
+# Circuit Breaker for Stock API
 
-This template should help get you started developing with Vue 3 in Vite.
+This branch implements a circuit breaker pattern for handling stock API calls.  
+It includes:
 
-## Recommended IDE Setup
+- Axios configuration with circuit breaker logic
+- Stops sending requests after 3 consecutive failures
+- Automatically retries after 60 seconds
+- Skips requests while the circuit is open
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The pattern helps protect against rate limits or downtime on external stock data providers.
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🎥 Screen Recording
 
-## Project Setup
+[Watch the coding](https://drive.google.com/file/d/1_lhTL4dEj35F-eUZ0umSQVkuL8qO7JwS/view?usp=sharing)
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## 📂 Branch
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+`circuit-breaker-stock-api`
